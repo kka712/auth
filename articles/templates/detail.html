@@ -5,4 +5,11 @@
     <p>{{aritcle.content}}</p>
     <p>{{article.user}}</p>
 
+    <hr>
+    <form action="{% url 'articles:comment_create' article.id %}" method="POST">
+        {% csrf_token %}
+        {{form}}
+        <input type="submit">
+    </form>
+
 {% endblock %}
